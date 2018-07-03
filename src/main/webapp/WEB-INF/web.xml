@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="3.1"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         metadata-complete="false">
+
+<display-name>WorkTest WebApp</display-name>
+
+    <servlet>
+        <servlet-name>Task1Servlet</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task1Servlet</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>Task1ServletAuth</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task1ServletAuth</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>Task1SearchServlet</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task1SearchServlet</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>Task1GetCities</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task1GetCities</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Task1GetCars</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task1GetCars</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Task2SendForm</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task2SendForm</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Task2RegForm</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task2RegForm</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Task2LoginForm</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task2LoginForm</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Task2SearchForm</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task2SearchForm</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>Task2Send</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task2Send</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>Task2Reg</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task2Reg</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Task2Login</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task2Login</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Task2Search</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task2Search</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>Task2GetClients</servlet-name>
+        <servlet-class>ru.shherbakov_aa.WorkTest.Task2GetClients</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Task1Servlet</servlet-name>
+        <url-pattern>/task1</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Task1ServletAuth</servlet-name>
+        <url-pattern>/task1_auth</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Task1SearchServlet</servlet-name>
+        <url-pattern>/search_task1</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Task1GetCities</servlet-name>
+        <url-pattern>/get_cities</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Task1GetCars</servlet-name>
+        <url-pattern>/get_cars</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Task2SendForm</servlet-name>
+        <url-pattern>/task2_sendform</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Task2RegForm</servlet-name>
+        <url-pattern>/task2_regform</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Task2LoginForm</servlet-name>
+        <url-pattern>/task2_loginform</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Task2SearchForm</servlet-name>
+        <url-pattern>/task2_searchform</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Task2Send</servlet-name>
+        <url-pattern>/send_task2</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Task2Reg</servlet-name>
+        <url-pattern>/reg_task2</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Task2Login</servlet-name>
+        <url-pattern>/login_task2</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Task2Search</servlet-name>
+        <url-pattern>/search_task2</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>Task2GetClients</servlet-name>
+        <url-pattern>/get_clients</url-pattern>
+    </servlet-mapping>
+
+    <security-constraint>
+        <display-name>Task1 Auth</display-name>
+        <web-resource-collection>
+            <web-resource-name>cp</web-resource-name>
+            <description/>
+            <url-pattern>/task1_auth</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>task1AuthRole</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>file</realm-name>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    
+    <security-role>
+        <description/>
+        <role-name>task1AuthRole</role-name>
+    </security-role>
+
+</web-app>
